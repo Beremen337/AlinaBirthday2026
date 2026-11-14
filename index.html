@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для Алины 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Мягкое свечение на фоне -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <!-- Летящие частицы -->
+    <canvas id="particles"></canvas>
+
+    <main class="container">
+        <header class="hero">
+            <p class="eyebrow">маленький подарок</p>
+            <h1 class="title">Для <span class="accent">Алины</span></h1>
+            <p class="subtitle">
+                Семь сюрпризов спрятаны здесь.<br>
+                Введи кодовое слово — и откроется картинка.
+            </p>
+            <div class="progress-wrap">
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                <p class="progress-text" id="progressText">0 из 7 открыто</p>
+            </div>
+        </header>
+
+        <section class="calendar" id="calendar" aria-label="Календарь сюрпризов"></section>
+
+        <footer class="footer">
+            <p>Сделано с любовью 💌</p>
+        </footer>
+    </main>
+
+    <!-- Модалка: ввод кода -->
+    <div class="modal" id="code-modal" role="dialog" aria-modal="true" aria-labelledby="code-title">
+        <div class="modal-card code-card">
+            <button class="close-btn" id="close-code" aria-label="Закрыть">×</button>
+            <div class="day-badge" id="code-day-badge">День 1</div>
+            <h2 class="code-title" id="code-title">Введи кодовое слово</h2>
+            <input
+                type="text"
+                id="code-input"
+                class="code-input"
+                placeholder="тайное слово…"
+                autocomplete="off"
+                spellcheck="false"
+            >
+            <button class="btn-primary" id="code-submit">Открыть сюрприз</button>
+            <p class="error" id="code-error" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <!-- Модалка: картинка -->
+    <div class="modal" id="image-modal" role="dialog" aria-modal="true">
+        <div class="modal-card image-card">
+            <button class="close-btn" id="close-image" aria-label="Закрыть">×</button>
+            <div class="image-wrap">
+                <img id="modal-image" src="" alt="Сюрприз">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
