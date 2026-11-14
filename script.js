@@ -166,13 +166,13 @@ function submitCode() {
 }
 
 /* ============================================
-   Показ картинки
+   Показ картинки (PNG)
    ============================================ */
 function showImage(dayNumber) {
     const img = document.getElementById('modal-image');
     const wrap = img.parentElement;
 
-    img.src = `images/${dayNumber}.jpg`;
+    img.src = `images/${dayNumber}.png`;
     document.getElementById('image-modal').classList.add('active');
 
     // Перезапуск анимации появления
@@ -279,12 +279,7 @@ function initParticles() {
 /* ============================================
    Закрытие модалок
    ============================================ */
-function closeAllModals() {
-    document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
-}
-
 function closeTopModal() {
-    // Закрываем верхнюю по z-index
     const imageModal = document.getElementById('image-modal');
     const codeModal = document.getElementById('code-modal');
 
